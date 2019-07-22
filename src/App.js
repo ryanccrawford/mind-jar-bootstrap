@@ -10,11 +10,11 @@ function App() {
     return (
         <Router>
             <div>
-                <NavBar>
-                    <Container>
-                        <Route path="/" component={Main} />
-                    </ Container>
+                <NavBar dark={true} name="Mind Jar">
                 </ NavBar>
+                <Container>
+                    <Route path="/" component={Main} />
+                </ Container>
             </ div>
         </ Router>
   );
