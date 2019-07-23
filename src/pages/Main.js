@@ -1,14 +1,14 @@
 import React from "react";
 import Container from "../components/Container";
-import Row from "../components/Row";
+import Board from "../components/Board";
 
 function Main() {
     return (
         <div>
-            <Container>
-                <Row>
+            <Container className="mt-4">
+                <Board>
 
-                </Row>
+                </ Board>
             </Container>
         </ div>
     )

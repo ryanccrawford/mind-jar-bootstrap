@@ -1,50 +1,40 @@
 import React, { Component } from "react";
-import Row from "./Row";
-import Col from "./Col";
-import Card from "./Card";
-import CardDetail from "./CardDetail";
+import Container from "../Container";
+import Row from "../Row";
+import Card from "../Card";
 
 class Board extends Component {
     state = {
-        images:[]
+        images: ["13","2","3","4","5","6","7","8","9","10","11","12","14","15","16"],
+        cardsClick: [],
+        isShuffled: false,
+        cards: []
+    };
+    componentDidMount() {
+        this.shuffleImages()
+    }
+
+    shuffleImages = () => {
+        this.setState({ isShuffled : true });
+        let array = this.state.images
+       for (let i = array.length - 1; i > 0; i--) {
+           let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+        }
+        this.setState({ cards: array })
+    }
+
+   handleImgClick = event => {
+     
     };
 
-    searchMovies = query => {
-        API.search(query)
-            .then(res => this.setState({ result: res.data }))
-            .catch(err => console.log(err));
-    };
 
     render() {
         return (
-            <Container>
-                <Row>
-                    <Col size="md-8">
-                        <Card
-                            heading={this.state.result.Title || "Search for a Movie to Begin"}
-                        >
-                            <MovieDetail
-                                title={this.state.result.Title}
-                                src={this.state.result.Poster}
-                                director={this.state.result.Director}
-                                genre={this.state.result.Genre}
-                                released={this.state.result.Released}
-                            />
-                        </Card>
-                    </Col>
-                    <Col size="md-4">
-                        <Card heading="Search">
-                            <SearchForm
-                                value={this.state.search}
-                                handleInputChange={this.handleInputChange}
-                                handleFormSubmit={this.handleFormSubmit}
-                            />
-                        </Card>
-                    </Col>
-                </Row>
-            </Container>
+                    <Card cards={this.state.cards}>
+                      </Card >
         );
     }
 }
 
-export default OmdbContainer;
+export default Board;

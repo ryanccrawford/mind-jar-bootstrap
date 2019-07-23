@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import ScoreBar from "../ScoreBar"
 
 function NavBar(props) {
     let type = ""
@@ -14,10 +14,11 @@ function NavBar(props) {
     }
 
     return (
-        <nav className={`navbar ${type} ${bg}`}>
+        <nav className={`navbar ${type} ${bg} shadow-sm`}>
                 <Link className="navbar-brand" to="/">
                 {props.name}
-                </Link>
+            </Link>
+            <ScoreBar></ScoreBar>
             </ nav>
     )
 }
