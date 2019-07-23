@@ -2,12 +2,21 @@ import React, { Component } from "react";
 
 
 class ScoreBar extends Component {
+
+
     state = {
-        score: 0,
-        highScore: 0,
-        wins: 0,
-        loses:0,
+        
     };
+
+    constructor(props) {
+        super(props);
+        this.state.score= 0;
+        this.state.highScore = 0;
+        this.state.wins=0;
+        this.state.loses=0;
+    }
+
+ 
 
     add = (type) => {
         let amount = this.state[type]

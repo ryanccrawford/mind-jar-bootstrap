@@ -8,13 +8,14 @@ function Card(props) {
     return (
         <Row>
             {props.cards.map((c, i) => (
-                (<div className="card shadow-sm ml-2 mr-2 mt-2 mb-2 bg-light col-2" key={i}
-                    onClick={props.handleImgClick}
-                    data-id={c}
+                (<div className="card shadow-sm ml-2 mr-2 mt-4 mb-4 bg-light col-2 game-tile" key={i}
+                    
                 >
-                    <img src={`./assets/images/illusions/${c}.gif`} alt="" class="card-img" />
-                    <div className="card-img-overlay">
-                        <p className="card-text"></ p>
+                    <img src={`./assets/images/illusions/${c}.gif`} alt="" className="card-img" />
+                    <div className="card-img-overlay"
+                        onClick={props.handleImgClick}
+                        data-id={c}
+                    >
                     </ div>
                 </ div>)
             ))}    

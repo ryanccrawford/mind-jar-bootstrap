@@ -3,12 +3,21 @@ import Card from "../Card";
 import "./style.css";
 
 class Board extends Component {
+    
+
+    constructor(props) {
+        super(props);
+        this.state.images = ["13", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "14", "15", "16"] ;
+        this.state.cardsClick = [] ;
+        this.state.isShuffled = false ;
+        this.state.cards = [];
+        
+    }
     state = {
-        images: ["13","2","3","4","5","6","7","8","9","10","11","12","14","15","16"],
-        cardsClick: [],
-        isShuffled: false,
-        cards: []
-    };
+
+
+    }
+   
     componentDidMount() {
         this.shuffleImages()
     }
@@ -26,21 +35,32 @@ class Board extends Component {
     handleImgClick = event => { 
         let id = event.target.getAttribute("data-id")
         if (id) {
-            this.addClickedImg(id)
-            
+            this.addClickedImg(id) 
         }
      
     };
     addClickedImg(imageNum) {
-        if (this.checkIfAlreadyClicked(id)) {
-
+        if (this.checkIfAlreadyClicked(imageNum)) {
+            this.shuffleImages()
+            //TODO: Loose Round
         } else {
             this.setState({ cardsClick: [...this.state.cardsClick, imageNum] })
-            this.setState({ })
+            this.shuffleImages()
+            //TODO: Add Point To Score
         }
     }
     checkIfAlreadyClicked = (id) => {
-        if(typeof(this.state.cards.find(id)))
+        let currentPicked = this.state.cardsClick
+        if (typeof (currentPicked) === 'undefined' || currentPicked.length < 1) {
+            return false
+        } else {
+            let match = currentPicked.find((value, index) => (id === value ? true : false))
+            if (typeof (match) === 'undefined') {
+                return false
+            }
+        }
+
+        return true
     }
     onAddItem = () => {
         this.setState(state => {
