@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Container from "../Container";
-import Row from "../Row";
 import Card from "../Card";
+import "./style.css";
 
 class Board extends Component {
     state = {
@@ -24,15 +23,40 @@ class Board extends Component {
         this.setState({ cards: array })
     }
 
-   handleImgClick = event => {
+    handleImgClick = event => { 
+        let id = event.target.getAttribute("data-id")
+        if (id) {
+            this.addClickedImg(id)
+            
+        }
      
     };
+    addClickedImg(imageNum) {
+        if (this.checkIfAlreadyClicked(id)) {
 
+        } else {
+            this.setState({ cardsClick: [...this.state.cardsClick, imageNum] })
+            this.setState({ })
+        }
+    }
+    checkIfAlreadyClicked = (id) => {
+        if(typeof(this.state.cards.find(id)))
+    }
+    onAddItem = () => {
+        this.setState(state => {
+            const list = [...state.list, state.value];
+
+            return {
+                list,
+                value: '',
+            };
+        });
+    };
 
     render() {
         return (
-                    <Card cards={this.state.cards}>
-                      </Card >
+            <Card cards={this.state.cards} handleImgClick={this.handleImgClick}>
+            </Card >
         );
     }
 }
