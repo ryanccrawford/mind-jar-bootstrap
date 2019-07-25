@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import ScoreBar from "../ScoreBar"
+//import { Link } from "react-router-dom";
 import "./style.css";
 
 function NavBar(props) {
@@ -16,10 +15,10 @@ function NavBar(props) {
 
     return (
         <nav className={`navbar ${type} ${bg} shadow-sm`}>
-                <Link className="navbar-brand" to="/">
+                <a className="navbar-brand" href="/">
                 <img src="./assets/images/glass-jar.png" height="64"/>{props.name}
-            </Link>
-            <ScoreBar></ScoreBar>
+            </a>
+           
             </ nav>
     )
 }

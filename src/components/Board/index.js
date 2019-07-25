@@ -4,7 +4,10 @@ import "./style.css";
 
 class Board extends Component {
     
+    state = {
 
+
+    }
     constructor(props) {
         super(props);
         this.state.images = ["13", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "14", "15", "16"] ;
@@ -13,10 +16,7 @@ class Board extends Component {
         this.state.cards = [];
         
     }
-    state = {
-
-
-    }
+    
    
     componentDidMount() {
         this.shuffleImages()
@@ -41,13 +41,19 @@ class Board extends Component {
     };
     addClickedImg(imageNum) {
         if (this.checkIfAlreadyClicked(imageNum)) {
-            this.shuffleImages()
-            //TODO: Loose Round
+            this.props.incrementLoses()
+            this.props.setScoreZero();
+            this.setState({ cards: [] })
+            this.setState({ cardsClick: [] })     
         } else {
             this.setState({ cardsClick: [...this.state.cardsClick, imageNum] })
-            this.shuffleImages()
-            //TODO: Add Point To Score
+                this.props.incrementScore()
+            if (this.state.cardsClick.length === this.state.images.length) {
+                this.props.incrementWins()    
+            }
+            
         }
+        this.shuffleImages()
     }
     checkIfAlreadyClicked = (id) => {
         let currentPicked = this.state.cardsClick
@@ -62,16 +68,7 @@ class Board extends Component {
 
         return true
     }
-    onAddItem = () => {
-        this.setState(state => {
-            const list = [...state.list, state.value];
-
-            return {
-                list,
-                value: '',
-            };
-        });
-    };
+   
 
     render() {
         return (
