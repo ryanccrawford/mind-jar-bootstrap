@@ -9,7 +9,7 @@ function Modal(props) {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="theModal">{props.title}</h5>
-                        <button id="closeIt" type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <button id="closeIt" onclick={() => {document.getElementById('#theModal').style.display = 'none'}} type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -21,6 +21,7 @@ function Modal(props) {
                     </div>
                 </div>
             </div>
+
         </div>
         
         )
