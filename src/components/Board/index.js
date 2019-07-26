@@ -11,8 +11,9 @@ class Board extends Component {
     constructor(props) {
         super(props);
         this.state.images = ["13", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "14", "15", "16"] ;
-        this.state.cardsClick = [] ;
-        this.state.isShuffled = false ;
+        this.state.images1 = ["13", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "14", "15", "16"];
+        this.state.images2 = ["13", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "14", "15", "16"];
+        this.state.cardsClick = [];
         this.state.cards = [];
         
     }
@@ -23,10 +24,10 @@ class Board extends Component {
     }
 
     shuffleImages = () => {
-        this.setState({ isShuffled : true });
+        this.setState({ cards: [] })
         let array = this.state.images
        for (let i = array.length - 1; i > 0; i--) {
-           let j = Math.floor(Math.random() * (i + 1));
+        let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
         }
         this.setState({ cards: array })
@@ -42,8 +43,7 @@ class Board extends Component {
     addClickedImg(imageNum) {
         if (this.checkIfAlreadyClicked(imageNum)) {
             this.props.incrementLoses()
-            this.props.setScoreZero();
-            this.setState({ cards: [] })
+            this.props.setScoreZero()
             this.setState({ cardsClick: [] })     
         } else {
             this.setState({ cardsClick: [...this.state.cardsClick, imageNum] })

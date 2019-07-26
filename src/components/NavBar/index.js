@@ -1,26 +1,34 @@
 import React from 'react';
 //import { Link } from "react-router-dom";
+import ScoreBar from "../ScoreBar"
 import "./style.css";
 
-function NavBar(props) {
-    let type = ""
-    let bg = ""
-    if (props.dark) {
-        type = "navbar-light"
-        bg = "bg-light"
-    } else {
-        type = "navbar-light"
-        bg = "bg-light"
-    }
-
-    return (
-        <nav className={`navbar ${type} ${bg} shadow-sm`}>
-                <a className="navbar-brand" href="/">
-                <img src="./assets/images/glass-jar.png" height="64"/>{props.name}
+class NavBar extends React.Component {
+    render() {
+        let type = ""
+        let bg = ""
+        if (this.props.dark) {
+            type = "navbar-light"
+            bg = "bg-light"
+        } else {
+            type = "navbar-light"
+            bg = "bg-light"
+        }
+        return (
+           <nav className={`navbar ${type} ${bg} shadow-sm`}>
+            <a className="navbar-brand" href="/">
+                <img src="./assets/images/glass-jar.png" height="64" alt="..." />{this.props.name}
             </a>
-           
-            </ nav>
+            <ScoreBar
+                score={this.props.score}
+                wins={this.props.wins}
+                loses={this.props.loses}
+                highScore={this.props.highScore}
+
+            ></ScoreBar>
+        </ nav>
     )
+    }
 }
 
 export default NavBar;

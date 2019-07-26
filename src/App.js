@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-//import { BrowserRouter as Router, Route } from "react-router-dom";
+import Script from "react-inline-script";
+import Modal from "./components/Modal";
 import NavBar from "./components/NavBar"
 import Main from "./pages/Main";
-import ScoreBar from "./components/ScoreBar"
 
 
 class App extends Component {
@@ -29,6 +29,21 @@ class App extends Component {
     setScoreZero = () => {
         this.setState({ score: 0 })
     }
+    showM = (message) => {
+        
+        return (
+
+            <Modal title="Great Job!" message={message}></Modal>
+            
+            )
+    }
+    hideM = (message) => {
+       
+        return (
+            <Script>hidem()</Script>
+            )
+    }
+
 
     render() {
         return (
@@ -36,16 +51,14 @@ class App extends Component {
             <div>
                 <NavBar
                     dark={true}
-                    name="Mind Jar">
-                    <ScoreBar
-                        score={this.state.score}
-                        wins={this.state.wins}
-                        loses={this.state.loses}
-                        highScore={this.state.highScore}
-                       
-                     />
-                </ NavBar>
-                <Main
+                    name="Mind Jar"
+                    score={this.state.score}
+                    wins={this.state.wins}
+                    loses={this.state.loses}
+                    highScore={this.state.highScore}
+                />
+              
+               <Main
                     score={this.state.score}
                     wins={this.state.wins}
                     loses={this.state.loses}
@@ -56,7 +69,10 @@ class App extends Component {
                     setScoreZero={this.setScoreZero}
                 />
 
-                
+                <nav class="navbar fixed-bottom navbar-light bg-light">
+                    <a class="text" href="/">Mind Jar</a>
+                </nav>
+                {this.state.score >= 2 ? this.showM("You Win This Round") : null}
             </ div>
 
         )

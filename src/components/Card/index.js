@@ -7,14 +7,21 @@ function Card(props) {
     return (
         <Container>
             <Row>
-            {props.cards.map((c, i) => (
-                (<button type="button" className="btn btn-light shadow bg-white rounded ml-2 mr-2 mt-4 mb-4 col-2 game-tile" key={i}
-                    onClick={props.handleImgClick}
-                    data-id={c}
-                >
-                    <img src={`./assets/images/illusions/${c}.gif`} alt="" className="card-img" />
-                   
-                </ button>
+                {props.cards.map((c, i) => (
+                    (
+                        <div className="col-4 mt-2 mb-1 colg"
+                            key={c}
+                        >
+                            <img
+
+                            src={`./assets/images/illusions/${c}.gif`}
+                            alt="..."
+                            className="button shadow bg-white rounded game-tile" 
+                           
+                            onClick={props.handleImgClick}
+                            data-id={c}
+                            />
+                     </div>
                 )
             )
             )
