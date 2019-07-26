@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mind-jar-bootstrap/static/css/main.a3d56ba1.chunk.css",
+    "main.js": "/mind-jar-bootstrap/static/js/main.09dbf1b2.chunk.js",
+    "main.js.map": "/mind-jar-bootstrap/static/js/main.09dbf1b2.chunk.js.map",
+    "runtime~main.js": "/mind-jar-bootstrap/static/js/runtime~main.a91c07b1.js",
+    "runtime~main.js.map": "/mind-jar-bootstrap/static/js/runtime~main.a91c07b1.js.map",
+    "static/js/2.eb807a85.chunk.js": "/mind-jar-bootstrap/static/js/2.eb807a85.chunk.js",
+    "static/js/2.eb807a85.chunk.js.map": "/mind-jar-bootstrap/static/js/2.eb807a85.chunk.js.map",
+    "index.html": "/mind-jar-bootstrap/index.html",
+    "precache-manifest.212412994ea1e44cb40c2f0b5f8a2719.js": "/mind-jar-bootstrap/precache-manifest.212412994ea1e44cb40c2f0b5f8a2719.js",
+    "service-worker.js": "/mind-jar-bootstrap/service-worker.js",
+    "static/css/main.a3d56ba1.chunk.css.map": "/mind-jar-bootstrap/static/css/main.a3d56ba1.chunk.css.map"
+  }
+}
