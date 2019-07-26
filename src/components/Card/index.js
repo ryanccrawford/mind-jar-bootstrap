@@ -9,7 +9,7 @@ function Card(props) {
             <Row>
                 {props.cards.map((c, i) => (
                     (
-                        <div className="col-4 mt-2 mb-1 colg"
+                        <div className="col-4 mt-1 mb-1 colg"
                             key={c}
                         >
                             <img

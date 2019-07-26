@@ -4,6 +4,7 @@
     max-width: 100% !important;
     padding: 6px !important;
     box-shadow: 1px 1px 20px black;
+    max-height: 175px;
 }
 
 .game-tile:hover {

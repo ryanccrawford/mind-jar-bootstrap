@@ -33,16 +33,11 @@ class App extends Component {
         
         return (
 
-            <Modal title="Great Job!" message={message}></Modal>
+            <Modal color={"primary"} title="Great Job!" message={message}></Modal>
             
             )
     }
-    hideM = (message) => {
-       
-        return (
-            <Script>hidem()</Script>
-            )
-    }
+    
 
 
     render() {
@@ -72,7 +67,7 @@ class App extends Component {
                 <nav class="navbar fixed-bottom navbar-light bg-light">
                     <a class="text" href="/">Mind Jar</a>
                 </nav>
-                {this.state.score >= 2 ? this.showM("You Win This Round") : null}
+                {this.state.score >= 15 ? this.showM("You Win This Round") : null}
             </ div>
 
         )
