@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-//import Modal from "./components/Modal";
 import NavBar from "./components/NavBar"
 import Main from "./pages/Main";
 import ReactModal from 'react-modal';
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
-    }
-};
+
 
 ReactModal.setAppElement('#root')
 
@@ -41,9 +31,7 @@ class App extends Component {
 
     incrementScore = () => {
         this.setState({ score: this.state.score + 1 })
-        if (this.state.score >= 2) {
-            
-        }
+        this.setHighScore()
     }
 
     incrementWins = () => {
@@ -61,6 +49,13 @@ class App extends Component {
         this.setSubTitle("Try to focus")
         this.setMessage("Looks like you picked that one all ready!")
         this.openModal()
+    }
+
+    setHighScore = () => {
+        if (this.state.highScore < this.state.score) {
+            this.setState({highScore: this.state.score})
+        }
+
     }
 
     setScoreZero = () => {
