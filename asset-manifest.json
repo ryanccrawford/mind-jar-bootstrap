@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mind-jar-bootstrap/static/css/main.fcc2d405.chunk.css",
-    "main.js": "/mind-jar-bootstrap/static/js/main.6cea9c9d.chunk.js",
-    "main.js.map": "/mind-jar-bootstrap/static/js/main.6cea9c9d.chunk.js.map",
+    "main.css": "/mind-jar-bootstrap/static/css/main.9b7f147d.chunk.css",
+    "main.js": "/mind-jar-bootstrap/static/js/main.43b041ff.chunk.js",
+    "main.js.map": "/mind-jar-bootstrap/static/js/main.43b041ff.chunk.js.map",
     "runtime~main.js": "/mind-jar-bootstrap/static/js/runtime~main.a91c07b1.js",
     "runtime~main.js.map": "/mind-jar-bootstrap/static/js/runtime~main.a91c07b1.js.map",
     "static/js/2.21df1149.chunk.js": "/mind-jar-bootstrap/static/js/2.21df1149.chunk.js",
     "static/js/2.21df1149.chunk.js.map": "/mind-jar-bootstrap/static/js/2.21df1149.chunk.js.map",
     "index.html": "/mind-jar-bootstrap/index.html",
-    "precache-manifest.8290ffe431d75049160fa0224661955f.js": "/mind-jar-bootstrap/precache-manifest.8290ffe431d75049160fa0224661955f.js",
+    "precache-manifest.c5b58578308e69b9b5740a428117bb3e.js": "/mind-jar-bootstrap/precache-manifest.c5b58578308e69b9b5740a428117bb3e.js",
     "service-worker.js": "/mind-jar-bootstrap/service-worker.js",
-    "static/css/main.fcc2d405.chunk.css.map": "/mind-jar-bootstrap/static/css/main.fcc2d405.chunk.css.map"
+    "static/css/main.9b7f147d.chunk.css.map": "/mind-jar-bootstrap/static/css/main.9b7f147d.chunk.css.map"
   }
 }

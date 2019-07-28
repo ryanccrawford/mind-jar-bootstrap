@@ -4,16 +4,23 @@
 }
 
 @font-face {
-    font-family: brain2;
-    src: url(../fonts/brain2.tff);
+    font-family: "BrainStew";
+    src: url(../fonts/brain2.otf) format("opentype"); /* Open Type Font */
+    font-weight: normal;
+    font-style: normal;
 }
+
 
 body {
     background-image: url(../images/background.jpg)
 }
 
 .navbar-brand {
-    font-family: brain1 !important;
+    /*font-family: brain2 !important;*/
     color: rgb(68,68,92) !important;
+}
+
+.brain {
+    font-family: "BrainStew" !important;
 }
 
