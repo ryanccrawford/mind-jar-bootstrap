@@ -16,9 +16,10 @@ class NavBar extends React.Component {
         }
         return (
            <nav className={`navbar ${type} ${bg} shadow-sm`}>
-            <a className="navbar-brand" href="/">
+            <a className="navbar-brand" href="#">
                 <img src="./assets/images/glass-jar.png" height="64" alt="..." />{this.props.name}
-            </a>
+                </a>
+                <span className="small-text">Make your mind hurt</span>
             <ScoreBar
                 score={this.props.score}
                 wins={this.props.wins}
