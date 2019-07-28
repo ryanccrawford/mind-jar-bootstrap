@@ -16,7 +16,7 @@ class NavBar extends React.Component {
         }
         return (
            <nav className={`navbar ${type} ${bg} shadow-sm`}>
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
                     <img src="./assets/images/glass-jar.png" height="64" alt="..." />
                     <span className="flicker brain">{this.props.name}</span>
                 </a>
