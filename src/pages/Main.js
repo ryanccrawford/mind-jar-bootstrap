@@ -14,6 +14,7 @@ function Main(props){
                     incrementWins={props.incrementWins}
                     incrementLoses={props.incrementLoses}
                     setScoreZero={props.setScoreZero}
+                    shuffleNow={props.shuffleNow}
                 />
             </Container>
         )

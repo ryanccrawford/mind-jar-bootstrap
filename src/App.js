@@ -1,51 +1,100 @@
 import React, { Component } from 'react';
-import Script from "react-inline-script";
-import Modal from "./components/Modal";
+import ReactDOM from 'react-dom';
+//import Modal from "./components/Modal";
 import NavBar from "./components/NavBar"
 import Main from "./pages/Main";
+import ReactModal from 'react-modal';
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)'
+    }
+};
+
+ReactModal.setAppElement('#root')
 
 
 class App extends Component {
+
+    constructor() {
+        super();
+        this.openModal = this.openModal.bind(this);
+        this.afterOpenModal = this.afterOpenModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
 
     state = {
         score: 0,
         highScore: 0,
         wins: 0,
-        loses: 0
+        loses: 0,
+        modalIsOpen: false,
+        title: "",
+        subtitle: "",
+        message: "",
+        shuffleNow: false
     };
 
     incrementScore = () => {
         this.setState({ score: this.state.score + 1 })
+        if (this.state.score >= 2) {
+            
+        }
     }
 
     incrementWins = () => {
         this.setState({ wins: this.state.wins + 1 })
+        this.setTitle("You Won!")
+        this.setSubTitle("Way to go!")
+        this.setMessage("Great Job. You are doing great!")
+        this.openModal()
+        this.setState({ shuffleNow: true })
     }
 
     incrementLoses = () => {
         this.setState({ loses: this.state.loses + 1 })
+        this.setTitle("Oh No!")
+        this.setSubTitle("Try to focus")
+        this.setMessage("Looks like you picked that one all ready!")
+        this.openModal()
     }
 
     setScoreZero = () => {
         this.setState({ score: 0 })
     }
-    showM = (message) => {
-        
-        return (
-
-            <Modal title="Great Job!" message={message}></Modal>
-            
-            )
-    }
-    hideM = (message) => {
-       
-        return (
-            <Script>hidem()</Script>
-            )
+    
+    openModal() {
+        this.setState({ modalIsOpen: true });
     }
 
+    setTitle = (title) => {
+        this.setState({title: title})
+    }
+
+    setSubTitle = (subTitle) => {
+        this.setState({subtitle: subTitle})
+    }
+
+    setMessage = (message) => {
+        this.setState({message: message})
+    }
+
+    afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        this.subtitle.style.color = '#f00';
+     
+    }
+
+    closeModal() {
+        this.setState({ modalIsOpen: false });
+    }
 
     render() {
+
         return (
 
             <div>
@@ -67,12 +116,44 @@ class App extends Component {
                     incrementWins={this.incrementWins}
                     incrementLoses={this.incrementLoses}
                     setScoreZero={this.setScoreZero}
+                    shuffleNow={this.state.shuffleNow}
+               
+
+                   
                 />
+                <ReactModal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.closeModal}
+                    contentLabel={this.state.title}
+                    style={{
+                        content: {
+                            backgroundColor: 'rgb(5,5,5)',
+                            top: '50%',
+                            left: '50%',
+                            right: 'auto',
+                            bottom: 'auto',
+                            marginRight: '-50%',
+                            transform: 'translate(-50%, -50%)',
+                            boxShadow: '1px 1px 20px black'
+                        }
+                    }}
+             
+                            >
+             
+                    <h2 ref={subtitle => this.subtitle = subtitle}>{this.state.subtitle}</h2>
+       
+                    <div>
+                        <p>{this.state.message}</p>
+                        <button onClick={this.closeModal}>OK</button>
+                    </div>
+
+                </ReactModal>
 
                 <nav class="navbar fixed-bottom navbar-light bg-light">
                     <a class="text" href="/">Mind Jar</a>
                 </nav>
-                {this.state.score >= 2 ? this.showM("You Win This Round") : null}
+                
             </ div>
 
         )
