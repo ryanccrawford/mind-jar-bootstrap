@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc3e61d054628246301e589358476080",
+    "revision": "c87e4ab907b25952c94d166f25c1d90a",
     "url": "/mind-jar-bootstrap/index.html"
   },
   {
-    "revision": "6ea0325f1b98c9c3ad3a",
+    "revision": "07ba16ff7ee5df627047",
     "url": "/mind-jar-bootstrap/static/css/main.fcc2d405.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mind-jar-bootstrap/static/js/2.21df1149.chunk.js"
   },
   {
-    "revision": "6ea0325f1b98c9c3ad3a",
-    "url": "/mind-jar-bootstrap/static/js/main.6d6bf16b.chunk.js"
+    "revision": "07ba16ff7ee5df627047",
+    "url": "/mind-jar-bootstrap/static/js/main.6cea9c9d.chunk.js"
   },
   {
     "revision": "f759c3a755b5a329fbf3",
