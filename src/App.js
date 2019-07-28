@@ -30,8 +30,9 @@ class App extends Component {
     };
 
     incrementScore = () => {
-        this.setState({ score: this.state.score + 1 })
-        this.setHighScore()
+        const ns = this.state.score + 1
+        this.setState({ score: ns })
+        this.setHighScore(ns)
     }
 
     incrementWins = () => {
@@ -51,9 +52,9 @@ class App extends Component {
         this.openModal()
     }
 
-    setHighScore = () => {
-        if (this.state.highScore < this.state.score) {
-            this.setState({highScore: this.state.score})
+    setHighScore = (score) => {
+        if (this.state.highScore < score) {
+            this.setState({ highScore: score})
         }
 
     }
