@@ -15,7 +15,8 @@
     "react-modal": "^3.9.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "react-spinners-loading": "^1.0.0"
+    "react-spinners-loading": "^1.0.0",
+    "react-visibility-sensor": "^5.1.1"
   },
   "scripts": {
     "predeploy": "npm run build",
